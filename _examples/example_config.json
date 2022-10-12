@@ -1,0 +1,14 @@
+{
+  "general": {
+    "logging_level": "DEBUG",
+    "logfile": "/var/log/foo.log"
+  },
+  "webhook": {
+    "enabled": true,
+    "device_uuids": "61020304620663030064086507660367=puck",
+    "url": "http://www.foo.com",
+    "headers": "{\"Content-Type\": \"application/json\"}",
+    "template": "{\"color\": \"{{ .Nickname }}\", \"gravity\": {{ .Minor }}, \"mac\": \"{{ .Mac }}\", \"temp\": {{ .Major }}, \"timestamp\": \"{{ .Timestamp }}\"}",
+    "method": "POST"
+  }
+}

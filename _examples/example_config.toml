@@ -1,0 +1,33 @@
+[general]
+logging_level = "DEBUG"
+logfile = "/var/log/foo.log" # defaults to stdout
+
+[stdout]
+device_uuids = "1234=foo,61020304620663030064086507660367=puck,5678=bar"
+
+[webhook]
+url = "http://192.168.2.192:8000"
+headers = "{\"Content-Type\": \"application/json\"}"
+template = "{\"color\": \"{{ .Nickname }}\", \"gravity\": {{ .Minor }}, \"mac\": \"{{ .Mac }}\", \"temp\": {{ .Major }}, \"timestamp\": \"{{ .Timestamp }}\"}"
+method = "POST"
+
+[datadog]
+device_uuids = "1234=foo,61020304620663030064086507660367=puck,5678=bar"
+# Note: make sure that the dd agent has DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
+statsd_host = "192.168.3.2"
+statsd_port = 8125
+tags = "color:{{.Nickname}},mac:{{.Mac}}"
+gauges = "bluey.temperature={{.Major}},bluey.gravity={{.Minor}}"
+
+[sqlite]
+device_uuids = "1234=foo,61020304620663030064086507660367=puck,5678=bar"
+file = "/home/myoung/repos/github/bluey/bluey.db"
+
+[mqtt]
+enabled = true
+device_uuids = "1234=foo,61020304620663030064086507660367=puck,5678=bar"
+url = "tcp://mosquitto.service.kube:1883"
+client_id = "foo"
+username = "wut"
+topic = "bar"
+template = "{\"color\": \"{{ .Nickname }}\", \"gravity\": {{ .Minor }}, \"mac\": \"{{ .Mac }}\", \"temp\": {{ .Major }}, \"timestamp\": \"{{ .Timestamp }}\"}"

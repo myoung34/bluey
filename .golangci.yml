@@ -1,0 +1,7 @@
+linters:
+  enable:
+    - revive
+issues:
+  exclude:
+    - "Error return value of .* is not checked"
+    - ".*not compatible with reflect.StructTag.Get.*pairs not separated by spaces"

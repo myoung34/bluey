@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  bluey:
+    container_name: bluey
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: "host"
+    volumes:
+      - ./config:/etc/bluey
+    command: -c /etc/bluey/config.toml
