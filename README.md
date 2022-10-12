@@ -1,4 +1,4 @@
-bleh2MQTT
+Bluey
 =====
 
 [![Coverage Status](https://coveralls.io/repos/github/myoung34/bluey/badge.svg)](https://coveralls.io/github/myoung34/bluey)
