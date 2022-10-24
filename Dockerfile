@@ -1,8 +1,9 @@
 FROM golang:alpine AS builder
 ENV CGO_ENABLED=0
 ENV CGO_CHECK=0
+# hadolint ignore=DL3018
 RUN apk update && \
-  apk add --no-cache git=2.36.2-r0
+  apk add --no-cache git
 WORKDIR $GOPATH/src/mypackage/myapp/
 COPY . .
 RUN go build -o /usr/local/bin/bluey main.go
