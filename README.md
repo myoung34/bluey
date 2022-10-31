@@ -11,6 +11,7 @@ Bluey
 * Http(s) Webhooks
 * datadog (dogstatsd)
 * sqlite
+* mqtt
 
 ## Usage ##
 
