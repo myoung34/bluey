@@ -59,10 +59,14 @@ topic        = "bar"
 template     = "{\"color\": \"{{ .Nickname }}\", \"gravity\": {{ .Minor }}, \"mac\": \"{{ .Mac }}\", \"temp\": {{ .Major }}, \"timestamp\": \"{{ .Timestamp }}\"}"
 ```
 
+### Install ###
+
+Grab the right arch for you from releases, extract to somewhere in PATH
+
 ### Run ###
 
 ```
-$ bluey
+$ bluey -c /etc/bluey/config.toml
 $ # Or from docker ( generate config into $cwd/config/config.toml )
 $ docker run -it \
   -v $(pwd)/config:/etc/bluey \
