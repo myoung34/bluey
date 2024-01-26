@@ -197,7 +197,7 @@ func (h *HCI) handlePacket(b []byte) {
 	case typVendorPkt:
 		err = fmt.Errorf("Vendor packet not supported")
 	default:
-		log.Fatalf("Unknown event: 0x%02X [ % X ]\n", t, b)
+		err = fmt.Errorf("Unknown event")
 	}
 	if err != nil {
 		log.Printf("hci: %s, [ % X]", err, b)
